@@ -3,13 +3,12 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from "react-router-dom";
-import {NAVBAR_ROUTE} from "./routes/constants";
 
 import App from './App';
 
 
 
-const myelement = <h1 className="myclass">Hello World</h1>;
+/*const myelement = <h1 className="myclass">Hello World</h1>;*/
 
 ReactDOM.render(
   <React.StrictMode>

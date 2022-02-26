@@ -14,10 +14,14 @@ import MenuItem from '@mui/material/MenuItem';
 
 import {NAVBAR_ROUTE} from "../../routes/constants";
 
-const pages = ['About Us', 'Services', 'Contact Us','SignIn'];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+import { useNavigate } from 'react-router-dom';
+
+
 
 const Navbar = () => {
+
+    const navigate = useNavigate();
+
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -97,7 +101,7 @@ const Navbar = () => {
           {NAVBAR_ROUTE.map(({name,path}) => (
               <Button
                 key={name}
-                onClick={handleCloseNavMenu}
+                onClick= {() => navigate(path)}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
                 {name}
