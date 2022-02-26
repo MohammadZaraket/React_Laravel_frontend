@@ -11,7 +11,8 @@ const myelement = <h1 className="myclass">Hello World</h1>;
 
 ReactDOM.render(
   <React.StrictMode>
-    <App/>
+    <App>
+    </App>
   </React.StrictMode>,
   document.getElementById('root')
 );

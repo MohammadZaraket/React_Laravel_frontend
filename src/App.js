@@ -1,8 +1,37 @@
 import React from "react";
 import './App.css';
-class App extends React.Component {
 
-	constructor(props) {
+const App = ({children}) => {
+    return (
+        <div style={{height:'100vh'}}>
+
+            <h1>HI FROM APPPP</h1>
+            
+        </div>
+    );
+};
+
+export default App;
+
+/*class App extends React.Component {
+
+    constructor(props) {
+
+        return(
+
+            <h1>Hi from APP</h1>
+        ) 
+    
+	
+	}
+}
+export default App;
+
+ERRRRROOORRR: Uncaught TypeError: Cannot add property updater, object is not extensible
+*/
+
+
+	/*constructor(props) {
 		super(props);
 
 		this.state = {
@@ -36,7 +65,8 @@ class App extends React.Component {
 			}
 		</div>
 	);
-}
-}
+}*/
 
-export default App;
+
+
+
