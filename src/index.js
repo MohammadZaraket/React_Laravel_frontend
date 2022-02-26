@@ -3,10 +3,15 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 
+import App from './App';
+
+
+
+const myelement = <h1 className="myclass">Hello World</h1>;
+
 ReactDOM.render(
   <React.StrictMode>
-
-  <h1>Hi from Index.js</h1>
+    <App/>
   </React.StrictMode>,
   document.getElementById('root')
 );
