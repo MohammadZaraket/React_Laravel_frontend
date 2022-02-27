@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import ContactForm from "../../components/ContactForm";
 
 const ContactUs = () => {
@@ -7,8 +7,9 @@ const ContactUs = () => {
    return(
 
     <div>
-    <ContactForm />
     <h1>Contact Us Page</h1>
+    <ContactForm />
+  
     </div>
    );
 };

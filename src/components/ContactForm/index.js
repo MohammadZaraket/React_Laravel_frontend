@@ -8,9 +8,6 @@ function ContactForm() {
 
   return (
     <div className="App"> 
-      <Typography gutterBottom variant="h3" align="center">
-        React-App
-       </Typography>
       <Grid>
         <Card style={{ maxWidth: 450, padding: "20px 5px", margin: "0 auto" }}>
           <CardContent>
@@ -22,17 +19,14 @@ function ContactForm() {
           </Typography> 
             <form>
               <Grid container spacing={1}>
-                <Grid xs={12} sm={6} item>
-                  <TextField placeholder="Enter first name" label="First Name" variant="outlined" fullWidth required />
-                </Grid>
-                <Grid xs={12} sm={6} item>
-                  <TextField placeholder="Enter last name" label="Last Name" variant="outlined" fullWidth required />
+                <Grid xs={12} item>
+                  <TextField placeholder="Enter Your name" label="Full Name" variant="outlined" fullWidth required />
                 </Grid>
                 <Grid item xs={12}>
                   <TextField type="email" placeholder="Enter email" label="Email" variant="outlined" fullWidth required />
                 </Grid>
                 <Grid item xs={12}>
-                  <TextField type="number" placeholder="Enter phone number" label="Phone" variant="outlined" fullWidth required />
+                  <TextField placeholder="Subject" label="Subject" variant="outlined" fullWidth required />
                 </Grid>
                 <Grid item xs={12}>
                   <TextField label="Message" multiline rows={4} placeholder="Type your message here" variant="outlined" fullWidth required />
