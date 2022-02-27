@@ -1,5 +1,9 @@
 import React, { useState, useEffect} from 'react';
 
+import ContactUs from "../../pages/ContactUs";
+import { Navigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+
 import { Grid, TextField, Button, Card, CardContent, Typography } from '@mui/material/';
 
 
@@ -7,11 +11,25 @@ function SignInForm() {
 
     const [email,setEmail] = useState("");
     const [password,setPassword] = useState("");
+    const [redirect,setRedirect] = useState(false);
+ 
+
+    const navigate = useNavigate();
+
+    /*useEffect(() => {
+
+      if (sessionStorage.getItem("user_token") != 'undefined') {
+
+        navigate("/dashboard")
+      }
+
+    },[])*/
 
    async function login(event){
 
+    event.preventDefault();
         let item = {email,password};
-        event.preventDefault();
+  
         console.log("hi shr")
     
             let result = await fetch("http://127.0.0.1:8000/api/login", {
@@ -21,17 +39,27 @@ function SignInForm() {
                     "Content-Type":"application/json",
                     "Accept": 'application/json'
                 },
+                
                 body: JSON.stringify(item)
-        
+
                 });
-        
+              
                 result = await result.json();
+                if(JSON.stringify(result.access_token)){
+
+                  navigate('/Dashboard')
+                }
+                else{
+                  return (
+                    <p>Password and Email aren't matched</p>
+                  )
+                }
+
+              }
                
-                let user_token =JSON.stringify(result.access_token);
-                localStorage.setItem("user_token",user_token);
 
-        }
-
+                /*let user_token =JSON.stringify(result.access_token);
+                sessionStorage.setItem("user_token",user_token);*/
 
   return (
     <div className="App"> 

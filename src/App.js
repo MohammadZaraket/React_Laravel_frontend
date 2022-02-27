@@ -6,6 +6,7 @@ import ContactUs from "./pages/ContactUs";
 import AboutUs from "./pages/AboutUs";
 import SignIn from "./pages/SignIn";
 import Services from "./pages/Services";
+import Dashboard from "./pages/Dashboard";
 
 
 function App({ children }) {
@@ -21,6 +22,7 @@ function App({ children }) {
                 <Route path="AboutUs" element={<AboutUs />} />
                 <Route path="SignIn" element={<SignIn />} />
                 <Route path="Services" element={<Services />} />
+                <Route path="Dashboard" element={<Dashboard />} />
             </Routes>
         </div>
     );
