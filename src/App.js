@@ -7,6 +7,7 @@ import AboutUs from "./pages/AboutUs";
 import SignIn from "./pages/SignIn";
 import Services from "./pages/Services";
 import Dashboard from "./pages/Dashboard";
+import SignUp from "./pages/SignUp";
 
 
 function App({ children }) {
@@ -23,6 +24,7 @@ function App({ children }) {
                 <Route path="SignIn" element={<SignIn />} />
                 <Route path="Services" element={<Services />} />
                 <Route path="Dashboard" element={<Dashboard />} />
+                <Route path="SignUp" element={<SignUp />} />
             </Routes>
         </div>
     );

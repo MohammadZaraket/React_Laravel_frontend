@@ -11,7 +11,10 @@ const SignIn = () => {
 
     <div>
       <SignInForm/>
-      <p></p>
+      <h6>Don't Have An Account?</h6>
+      <nav>
+         <Link to="/SignUp">SignUp</Link>
+      </nav>
     </div>
 
    );
