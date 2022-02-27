@@ -2,17 +2,25 @@ import React from "react";
 import './App.css';
 import { Routes, Route, Link } from "react-router-dom";
 import Navbar from "./components/Navbar";
+import ContactUs from "./pages/ContactUs";
+import AboutUs from "./pages/AboutUs";
+import SignIn from "./pages/SignIn";
+import Services from "./pages/Services";
 
 
 function App({ children }) {
     return (
         <div className="App">
-            <Navbar />
            
+           <Navbar />
             <h1>Welcome to React Router!</h1>
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="about" element={<About />} />
+                <Route path="ContactUs" element={<ContactUs />} />
+                <Route path="AboutUs" element={<AboutUs />} />
+                <Route path="SignIn" element={<SignIn />} />
+                <Route path="Services" element={<Services />} />
             </Routes>
         </div>
     );

@@ -24,8 +24,8 @@ export const SERVICES = {
 }
 
 export const SIGNIN_ROUTE = {
-    path:'/login',
-    name:'Login',
+    path:'/SignIn',
+    name:'SignIn',
     component:SignIn
 }
 
