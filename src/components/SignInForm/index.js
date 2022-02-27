@@ -5,13 +5,13 @@ import { Grid, TextField, Button, Card, CardContent, Typography } from '@mui/mat
 
 function SignInForm() {
 
-    const [email,setEmail] = useState("mo@gmail.com");
-    const [password,setPassword] = useState("123456789mo1");
+    const [email,setEmail] = useState("");
+    const [password,setPassword] = useState("");
 
-   async function login(){
+   async function login(event){
 
-   // localStorage.setItem("user_token",user_token);
         let item = {email,password};
+        event.preventDefault();
         console.log("hi shr")
     
             let result = await fetch("http://127.0.0.1:8000/api/login", {
@@ -26,11 +26,6 @@ function SignInForm() {
                 });
         
                 result = await result.json();
-
-                 if(result.status==401)
-                  {
-                     throw new Error(result.status)
-                  }
                
                 let user_token =JSON.stringify(result.access_token);
                 localStorage.setItem("user_token",user_token);
@@ -52,10 +47,10 @@ function SignInForm() {
             <form>
               <Grid container spacing={1}>
                 <Grid item xs={12}>
-                  <TextField type="email" placeholder="Enter email" label="Email" variant="outlined" fullWidth required />
+                  <TextField type="email" placeholder="Enter email" label="Email" variant="outlined" value={email} onInput={e => setEmail(e.target.value)} fullWidth required />
                 </Grid>
                 <Grid item xs={12}>
-                  <TextField  type="password" placeholder="Enter Password" label="password" variant="outlined" fullWidth required />
+                  <TextField  type="password" placeholder="Enter Password" label="password" variant="outlined" value={password} onInput={e => setPassword(e.target.value)} fullWidth required />
                 </Grid>
                 <Grid item xs={12}>
                   <Button type="submit" variant="contained" color="primary" onClick= {login} fullWidth>SignIn</Button>
