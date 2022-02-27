@@ -1,54 +1,42 @@
 import React, { useState, useEffect} from 'react';
-
 import ContactUs from "../../pages/ContactUs";
 import { Navigate } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
-
 import { Grid, TextField, Button, Card, CardContent, Typography } from '@mui/material/';
+import axios from "axios";
 
 
 function SignUpForm() {
 
-    const [email,setEmail] = useState("");
-    const [password,setPassword] = useState("");
-    const [name,setName] = useState("");
-    const [confirmPassword,setConfirmPassword] = useState("");
-    const [redirect,setRedirect] = useState(false);
- 
+    const SignUpURL = "http://127.0.0.1:8000/api/register";
+    const [email,setEmail] = useState(null);
+    const [password,setPassword] = useState(null);
+    const [name,setName] = useState(null);
+    const [confirmPassword,setConfirmPassword] = useState(null);
 
-    const navigate = useNavigate();
+  React.useEffect(() => {
+    axios.get(`${SignUpURL}/1`).then((response) => {
+        setEmail(response.data);
+        setPassword(response.data);
+        setName(response.data);
+        setConfirmPassword(response.data);
+         });
+        }, []);
 
-   async function signUP(event){
 
-    event.preventDefault();
-        let item = {name,email,password,confirmPassword};
-  
-        console.log("hi shr")
-    
-            let result = await fetch("http://127.0.0.1:8000/api/register", {
-
-                method: 'POST',
-                headers: {
-                    "Content-Type":"application/json",
-                    "Accept": 'application/json'
-                },
-                
-                body: JSON.stringify(item)
-
-                });
-              
-                result = await result.json();
-                if(JSON.stringify(result.access_token)){
-
-                  navigate('/Dashboard')
-                }
-                else{
-                  return (
-                    <p>Password and Email aren't matched</p>
-                  )
-                }
-
-              }
+    function signUP() {
+        axios
+          .post(SignUpURL, {
+            title: "Hello World!",
+            body: "This is a new post."
+          })
+          .then((response) => {
+            setEmail(response.data);
+            setPassword(response.data);
+            setName(response.data);
+            setConfirmPassword(response.data);
+          });
+      }
                
 
   return (
@@ -60,7 +48,7 @@ function SignUpForm() {
               SignUp
           </Typography> 
             <Typography variant="body2" color="textSecondary" component="p" gutterBottom>
-              So You Can Access The Dashboard To Edit Profile
+              Create An Account To Enjoy Our Services
           </Typography> 
             <form>
               <Grid container spacing={1}>
