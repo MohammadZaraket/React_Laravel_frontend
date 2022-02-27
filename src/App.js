@@ -8,6 +8,10 @@ import SignIn from "./pages/SignIn";
 import Services from "./pages/Services";
 import Dashboard from "./pages/Dashboard";
 import SignUp from "./pages/SignUp";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Carousel from 'react-bootstrap/Carousel';
+import Logo from './logo.jpg';
+
 
 
 function App({ children }) {
@@ -16,9 +20,46 @@ function App({ children }) {
            
            <Navbar />
             <h1>Welcome to React Router!</h1>
+            <Carousel fade>
+  <Carousel.Item>
+    <img
+      className="d-block w-100"
+      src={Logo}
+      alt="First slide"
+    />
+    <Carousel.Caption>
+      <h3>First slide label</h3>
+      <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+    </Carousel.Caption>
+  </Carousel.Item>
+  <Carousel.Item>
+    <img
+      className="d-block w-100"
+      src="./assets/Images/646035994-ssc-napoli-v-atalanta-bc-serie-a.jpg.jpg"
+      alt="Second slide"
+    />
+
+    <Carousel.Caption>
+      <h3>Second slide label</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </Carousel.Caption>
+  </Carousel.Item>
+  <Carousel.Item>
+    <img
+      className="d-block w-100"
+      src={Logo}
+      alt="Third slide"
+    />
+
+    <Carousel.Caption>
+      <h3>Third slide label</h3>
+      <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+    </Carousel.Caption>
+  </Carousel.Item>
+</Carousel>
+       
+
             <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="about" element={<About />} />
                 <Route path="ContactUs" element={<ContactUs />} />
                 <Route path="AboutUs" element={<AboutUs />} />
                 <Route path="SignIn" element={<SignIn />} />
@@ -29,7 +70,11 @@ function App({ children }) {
         </div>
     );
 
-    function Home() {
+    };  
+export default App;
+
+
+    /*function Home() {
         return (
             <>
                 <main>
@@ -60,11 +105,11 @@ function App({ children }) {
         );
     }
 
-}
+}*/
 
-export default App;
 
-/*class App extends React.Component {
+
+/*className App extends React.Component {
 
     constructor(props) {
 
@@ -107,7 +152,7 @@ ERRRRROOORRR: Uncaught TypeError: Cannot add property updater, object is not ext
 			<h1> Pleses wait some time.... </h1> </div> ;
 
 		return (
-		<div className = "App">
+		<div classNameName = "App">
 			<h1> Fetch data from an api in react </h1> {
 				<ol>
 					greeting: {items.greeting},
@@ -117,7 +162,3 @@ ERRRRROOORRR: Uncaught TypeError: Cannot add property updater, object is not ext
 		</div>
 	);
 }*/
-
-
-
-
