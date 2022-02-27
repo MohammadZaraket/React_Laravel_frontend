@@ -8,9 +8,6 @@ const AboutUs = () => {
 
       <div>
              <h1>AboutUs Us Page</h1>
-    
-
-
 
       </div>
 
