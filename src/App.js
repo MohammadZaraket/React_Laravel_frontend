@@ -55,8 +55,8 @@ function App({ children }) {
       alt="First slide"
     />
     <Carousel.Caption>
-      <h3>First slide label</h3>
-      <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+      <h3>Web Development Is Rising!</h3>
+      <p>We Are In 2022</p>
             </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
@@ -67,8 +67,8 @@ function App({ children }) {
             />
 
             <Carousel.Caption>
-            <h3>Second slide label</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <h3>All Is Connected</h3>
+            <p>Living In a Small World!</p>
             </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
@@ -79,8 +79,8 @@ function App({ children }) {
             />
 
             <Carousel.Caption>
-            <h3>Third slide label</h3>
-            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+            <h3>Programming Languages</h3>
+            <p>Trust Me, There Is A Lot!</p>
             </Carousel.Caption>
         </Carousel.Item>
         </Carousel>
