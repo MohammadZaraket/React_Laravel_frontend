@@ -8,8 +8,6 @@ import App from './App';
 
 
 
-/*const myelement = <h1 className="myclass">Hello World</h1>;*/
-
 ReactDOM.render(
   <React.StrictMode>
 

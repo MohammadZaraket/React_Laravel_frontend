@@ -50,7 +50,7 @@ const Navbar = () => {
             component="div"
             sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
           >
-            LOGO
+            React
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -81,6 +81,7 @@ const Navbar = () => {
               sx={{
                 display: { xs: 'block', md: 'none' },
               }}
+              
             >
               {NAVBAR_ROUTE.map(({name,path}) => (
                 <MenuItem key={name} onClick={handleCloseNavMenu}>

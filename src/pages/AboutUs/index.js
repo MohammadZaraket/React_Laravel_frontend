@@ -6,7 +6,14 @@ const AboutUs = () => {
 
    return(
 
-    <h1>AboutUs Us Page</h1>
+      <div>
+             <h1>AboutUs Us Page</h1>
+    
+
+
+
+      </div>
+
    );
 };
 

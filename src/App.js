@@ -10,8 +10,10 @@ import Dashboard from "./pages/Dashboard";
 import SignUp from "./pages/SignUp";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Carousel from 'react-bootstrap/Carousel';
-import Logo from './logo.jpg';
-
+import Devices from './assets/Images/devices.png';
+import Lang from './assets/Images/lang.png';
+import Web from './assets/Images/web.png';
+import { Grid, TextField, Button, Card, CardContent, Typography } from '@mui/material/';
 
 
 function App({ children }) {
@@ -20,46 +22,11 @@ function App({ children }) {
            
            <Navbar />
             <h1>Welcome to React Router!</h1>
-            <Carousel fade>
-  <Carousel.Item>
-    <img
-      className="d-block w-100"
-      src={Logo}
-      alt="First slide"
-    />
-    <Carousel.Caption>
-      <h3>First slide label</h3>
-      <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-    </Carousel.Caption>
-  </Carousel.Item>
-  <Carousel.Item>
-    <img
-      className="d-block w-100"
-      src="./assets/Images/646035994-ssc-napoli-v-atalanta-bc-serie-a.jpg.jpg"
-      alt="Second slide"
-    />
 
-    <Carousel.Caption>
-      <h3>Second slide label</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-    </Carousel.Caption>
-  </Carousel.Item>
-  <Carousel.Item>
-    <img
-      className="d-block w-100"
-      src={Logo}
-      alt="Third slide"
-    />
-
-    <Carousel.Caption>
-      <h3>Third slide label</h3>
-      <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-    </Carousel.Caption>
-  </Carousel.Item>
-</Carousel>
        
 
             <Routes>
+                <Route path="/" element={<Landing />} />
                 <Route path="ContactUs" element={<ContactUs />} />
                 <Route path="AboutUs" element={<AboutUs />} />
                 <Route path="SignIn" element={<SignIn />} />
@@ -70,24 +37,62 @@ function App({ children }) {
         </div>
     );
 
-    };  
-export default App;
 
 
-    /*function Home() {
+
+    function Landing() {
         return (
             <>
                 <main>
-                    <h2>Welcome to the homepage!</h2>
-                    <p>You can do this, I believe in you.</p>
+                  
+            <Grid container spacing={1} >
+              <Grid item xs={12}>
+                  
+            <Carousel fade className="carousel">
+         <Carousel.Item>
+    <img
+      className="d-block w-100"
+      src={Web}
+      alt="First slide"
+    />
+    <Carousel.Caption>
+      <h3>First slide label</h3>
+      <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+            </Carousel.Caption>
+        </Carousel.Item>
+        <Carousel.Item>
+            <img
+            className="d-block w-100"
+            src={Devices}
+            alt="Second slide"
+            />
+
+            <Carousel.Caption>
+            <h3>Second slide label</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </Carousel.Caption>
+        </Carousel.Item>
+        <Carousel.Item>
+            <img
+            className="d-block w-100"
+            src={Lang}
+            alt="Third slide"
+            />
+
+            <Carousel.Caption>
+            <h3>Third slide label</h3>
+            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+            </Carousel.Caption>
+        </Carousel.Item>
+        </Carousel>
+        </Grid>
+        </Grid>
                 </main>
-                <nav>
-                    <Link to="/about">About</Link>
-                </nav>
+
             </>
         );
     }
-
+/*
     function About() {
         return (
             <>
@@ -162,3 +167,6 @@ ERRRRROOORRR: Uncaught TypeError: Cannot add property updater, object is not ext
 		</div>
 	);
 }*/
+
+};  
+export default App;
