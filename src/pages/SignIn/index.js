@@ -1,4 +1,5 @@
 import React from 'react';
+import SignInForm from "../../components/SignInForm";
 
 
 const SignIn = () => {
@@ -6,7 +7,10 @@ const SignIn = () => {
 
    return(
 
-    <h1>SignIn Page</h1>
+    <div>
+      <SignInForm />
+    </div>
+
    );
 };
 
