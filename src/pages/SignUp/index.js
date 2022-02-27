@@ -10,6 +10,10 @@ const SignUp = () => {
 
     <div>
       <SignUpForm/>
+      <h6>Already Have An Account?</h6>
+      <nav>
+         <Link to="/SignIn">SignIn</Link>
+      </nav>
     </div>
 
    );

@@ -8,6 +8,8 @@ import axios from "axios";
 
 function SignUpForm() {
 
+    const navigate = useNavigate();
+
     const SignUpURL = "http://127.0.0.1:8000/api/register";
     const [name,setName] = useState("");
     const [email,setEmail] = useState("");
@@ -23,6 +25,8 @@ function SignUpForm() {
             setPassword(response.data);
             setName(response.data);
             setConfirmPassword(response.data);*/
+
+            navigate('/SignIn')
             console.log("test")
           });
       }
