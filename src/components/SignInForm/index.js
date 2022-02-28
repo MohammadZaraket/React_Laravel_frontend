@@ -54,8 +54,6 @@ function set(key, value) {
           alert("Please check your credentials and try agian");
         }
 
-        
-        console.log("hi shr")
       }
     
     
