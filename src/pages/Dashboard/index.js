@@ -1,5 +1,7 @@
 import React from 'react';
 
+import UserProfile from "../../components/UserProfile";
+
 const Dashboard = () => {
 
 
@@ -7,6 +9,7 @@ const Dashboard = () => {
 
     <div>
     <h1>Dashboard Page</h1>
+    <UserProfile />
   
     </div>
    );
