@@ -61,34 +61,30 @@ function set(key, value) {
     
   
     
-           /* let result = await fetch("http://127.0.0.1:8000/api/login", {
+  /* let result = await fetch("http://127.0.0.1:8000/api/login", {
 
-                method: 'POST',
-                headers: {
-                    "Content-Type":"application/json",
-                    "Accept": 'application/json'
-                },
+    method: 'POST',
+    headers: {
+              "Content-Type":"application/json",
+                "Accept": 'application/json'
+            },
                 
-                body: JSON.stringify(item)
-
+    body: JSON.stringify(item)
                 });
               
-                result = await result.json();
-                if(JSON.stringify(result.access_token)){
+    result = await result.json();
+    if(JSON.stringify(result.access_token)){
 
-                  navigate('/Dashboard')
-                }
-                else{
-                  return (
-                    <p>Password and Email aren't matched</p>
-                  )
-                }
+        navigate('/Dashboard')
+      }
+      else{
+         return ()
+          }
 
-              }*/
+    }*/
                
-
-                /*let user_token =JSON.stringify(result.access_token);
-                sessionStorage.setItem("user_token",user_token);*/
+      /*let user_token =JSON.stringify(result.access_token);
+      sessionStorage.setItem("user_token",user_token);*/
 
   return (
     <div className="App"> 
