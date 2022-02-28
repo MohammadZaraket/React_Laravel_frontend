@@ -1,65 +1,88 @@
 import React, { useState, useEffect} from 'react';
-
 import ContactUs from "../../pages/ContactUs";
-import { Navigate } from 'react-router-dom';
+//import { Navigate } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
-
 import { Grid, TextField, Button, Card, CardContent, Typography } from '@mui/material/';
+//import { RouteComponentProps } from "react-router-dom";
+import AuthService from "../../Services/AuthService";
+import axios from "axios";
+import Cookie from "universal-cookie";
 
 
 function SignInForm() {
 
     const [email,setEmail] = useState("");
-    const [password,setPassword] = useState("");
+    const [password,setPassword] = useState("q");
     const [redirect,setRedirect] = useState(false);
  
+    const cookie = new Cookie();
 
     const navigate = useNavigate();
 
-    /*useEffect(() => {
 
-      if (sessionStorage.getItem("user_token") != 'undefined') {
+    function handleLoginSuccess(response) {
+      set("access_token", response.access_token);
+      return true;
+    }
 
-        navigate("/dashboard")
-      }
 
-    },[])*/
+    
+  async function doUserLogin(credentials) {
+    try {
+      const response = await axios.post("http://127.0.0.1:8000/api/login", credentials);
+      return response.data;
+    } catch (error) {
+      console.error("Error", error.response);
+      return false;
+    }
+  }
+
+function set(key, value) {
+  cookie.set(key, value);
+}
 
    async function login(event){
 
     event.preventDefault();
         let item = {email,password};
-  
-        console.log("hi shr")
+
+        const response = await doUserLogin(item);
+        if (response) {
+          handleLoginSuccess(response);
+          navigate("/dashboard");
+        } else {
+          alert("Please check your credentials and try agian");
+        }
+
+      }
     
-            let result = await fetch("http://127.0.0.1:8000/api/login", {
+    
+  
+    
+  /* let result = await fetch("http://127.0.0.1:8000/api/login", {
 
-                method: 'POST',
-                headers: {
-                    "Content-Type":"application/json",
-                    "Accept": 'application/json'
-                },
+    method: 'POST',
+    headers: {
+              "Content-Type":"application/json",
+                "Accept": 'application/json'
+            },
                 
-                body: JSON.stringify(item)
-
+    body: JSON.stringify(item)
                 });
               
-                result = await result.json();
-                if(JSON.stringify(result.access_token)){
+    result = await result.json();
+    if(JSON.stringify(result.access_token)){
 
-                  navigate('/Dashboard')
-                }
-                else{
-                  return (
-                    <p>Password and Email aren't matched</p>
-                  )
-                }
+        navigate('/Dashboard')
+      }
+      else{
+         return ()
+          }
 
-              }
+    }*/
                
-
-                /*let user_token =JSON.stringify(result.access_token);
-                sessionStorage.setItem("user_token",user_token);*/
+      /*let user_token =JSON.stringify(result.access_token);
+      sessionStorage.setItem("user_token",user_token);*/
 
   return (
     <div className="App"> 
