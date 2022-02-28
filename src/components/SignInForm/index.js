@@ -12,7 +12,7 @@ import Cookie from "universal-cookie";
 function SignInForm() {
 
     const [email,setEmail] = useState("");
-    const [password,setPassword] = useState("");
+    const [password,setPassword] = useState("q");
     const [redirect,setRedirect] = useState(false);
  
     const cookie = new Cookie();

@@ -8,15 +8,15 @@ import axios from "axios";
 import Cookie from "universal-cookie";
 //import {Tabs, Tab, Col, Row}  from 'react-bootstrap';
 
-import TextField from '@mui/material/TextField';
+import { Grid, TextField, Button, Card, CardContent, Typography } from '@mui/material/';
 
 
 
 function UserProfile() {
       const [user, setUsers] = useState([]);
 
-      const [name,setName] = useState("");
-      const [email,setEmail] = useState("");
+      var [name,setName] = useState("");
+      var [email,setEmail] = useState("");
       
       const cookies = new Cookie();
       const [cookie, setCookie] = useState(cookies.get('access_token'))  
@@ -39,23 +39,22 @@ function UserProfile() {
      
     
       return (
-          <div>
+        <form>
+        <Grid container spacing={10}>
+          <Grid item xs={6}>
+            <TextField type="email" placeholder="Enter email" label="Email" variant="outlined" value={email} onInput={e => setEmail(e.target.value)}  required />
+          </Grid>
+    
+          <Grid item xs={6}>
+            <TextField  placeholder="Enter Name" label="Name" variant="outlined" value={name} onInput={e => setName(e.target.value)}  required />
+          </Grid>
+  
+          <Grid item xs={12}>
+            <Button type="submit" variant="contained" color="primary" >SignIn</Button>
+          </Grid>
 
-        <h1>hi</h1>
-        <TextField
-        helperText="Please enter your name"
-        id="demo-helper-text-misaligned"
-        label="Name"
-      />
-
-    <TextField
-        helperText="Please enter your name"
-        id="demo-helper-text-misaligned"
-        label="Name"
-        value="hi"
-      />
-
-          </div>
+        </Grid>
+      </form>
  
 
       )
