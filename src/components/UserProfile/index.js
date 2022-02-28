@@ -42,15 +42,15 @@ function UserProfile() {
         <form>
         <Grid container spacing={10}>
           <Grid item xs={6}>
-            <TextField type="email" placeholder="Enter email" label="Email" variant="outlined" value={email} onInput={e => setEmail(e.target.value)}  required />
+            <TextField type="email" placeholder="Enter email" helperText="Enter Your Edited Email" label="Email" variant="outlined" value={email} onInput={e => setEmail(e.target.value)}  required />
           </Grid>
     
           <Grid item xs={6}>
-            <TextField  placeholder="Enter Name" label="Name" variant="outlined" value={name} onInput={e => setName(e.target.value)}  required />
+            <TextField  placeholder="Enter Name" helperText="Enter Your Edited Name" label="Name" variant="outlined" value={name} onInput={e => setName(e.target.value)}  required />
           </Grid>
   
           <Grid item xs={12}>
-            <Button type="submit" variant="contained" color="primary" >SignIn</Button>
+            <Button type="submit" variant="contained" color="primary" >Save New</Button>
           </Grid>
 
         </Grid>

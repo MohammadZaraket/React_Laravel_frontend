@@ -21,9 +21,7 @@ function App({ children }) {
         <div className="App">
            
            <Navbar />
-            <h1>Welcome to React FrontEnd Project</h1>
-            <p>What do we love most about this landing page? It's not what it doesn't have, but what it have — a navigation bar! By Clicking the navigation bar, you can check our various pages and even you can SignIn</p>
-
+           
             <Routes>
                 <Route path="/" element={<Landing />} />
                 <Route path="ContactUs" element={<ContactUs />} />
@@ -42,6 +40,9 @@ function App({ children }) {
     function Landing() {
         return (
             <>
+             <h1>Welcome to React FrontEnd Project</h1>
+            <p>What do we love most about this landing page? It's not what it doesn't have, but what it have — a navigation bar! By Clicking the navigation bar, you can check our various pages and even you can SignIn</p>
+
                 <main>
                   
             <Grid container spacing={1} >
