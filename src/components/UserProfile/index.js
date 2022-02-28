@@ -8,6 +8,7 @@ import axios from "axios";
 import Cookie from "universal-cookie";
 //import {Tabs, Tab, Col, Row}  from 'react-bootstrap';
 
+import TextField from '@mui/material/TextField';
 
 
 
@@ -38,7 +39,24 @@ function UserProfile() {
      
     
       return (
-          <h1>hi</h1>
+          <div>
+
+        <h1>hi</h1>
+        <TextField
+        helperText="Please enter your name"
+        id="demo-helper-text-misaligned"
+        label="Name"
+      />
+
+    <TextField
+        helperText="Please enter your name"
+        id="demo-helper-text-misaligned"
+        label="Name"
+        value="hi"
+      />
+
+          </div>
+ 
 
       )
     
