@@ -28,14 +28,15 @@ function UserProfile() {
     };
 
       
-      const fetchData = async () => {
+      const fetchData = async (event) => {
+             event.preventDefault();
             var response = await axios.get("http://127.0.0.1:8000/api/user-profile", config);
             console.log(response.data);
             setName(response.data.name);
             setEmail(response.data.email);
         }
 
-        fetchData();
+
      
         
     
@@ -45,6 +46,7 @@ function UserProfile() {
         try {
           const response = await axios.post("http://127.0.0.1:8000/api/updateProfile", credentials,config);
           return response.data;
+         
         } catch (error) {
           console.error("Error", error.response);
           return false;
@@ -58,6 +60,9 @@ function UserProfile() {
     event.preventDefault();
         let item = {name,email,password,password_confirmation};
         const response = await doUserUpdate(item);
+        if(response){
+            alert("User Info Updated Successfully!");
+        }
 
       }
 
@@ -69,7 +74,7 @@ function UserProfile() {
               Click Button To Show Your Info
           </Typography> 
           <Grid item xs={12}>
-            <Button type="submit" variant="contained" color="primary" onClick= {updateProfile} > Show</Button>
+            <Button type="submit" variant="contained" color="primary" onClick= {fetchData} > Show</Button>
           </Grid>
       </form>
  
