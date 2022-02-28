@@ -1,10 +1,11 @@
 import React, { useState, useEffect} from 'react';
-
 import ContactUs from "../../pages/ContactUs";
 import { Navigate } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
-
 import { Grid, TextField, Button, Card, CardContent, Typography } from '@mui/material/';
+import { RouteComponentProps } from "react-router-dom";
+
+//import AuthService from "./../../services/AuthService";
 
 
 function SignInForm() {
@@ -29,10 +30,21 @@ function SignInForm() {
 
     event.preventDefault();
         let item = {email,password};
+
+        const response = await AuthService.doUserLogin(item);
+        if (response) {
+          AuthService.handleLoginSuccess(response, this.state.isChecked);
+          this.props.history.push("/home");
+        } else {
+          alert("Please check your credentials and try agian");
+        }
+      }
+    
+    
   
         console.log("hi shr")
     
-            let result = await fetch("http://127.0.0.1:8000/api/login", {
+           /* let result = await fetch("http://127.0.0.1:8000/api/login", {
 
                 method: 'POST',
                 headers: {
@@ -55,7 +67,7 @@ function SignInForm() {
                   )
                 }
 
-              }
+              }*/
                
 
                 /*let user_token =JSON.stringify(result.access_token);
