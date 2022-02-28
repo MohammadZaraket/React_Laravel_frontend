@@ -33,7 +33,7 @@ function SignInForm() {
 
         const response = await AuthService.doUserLogin(item);
         if (response) {
-          AuthService.handleLoginSuccess(response, this.state.isChecked);
+          AuthService.handleLoginSuccess(response);
           this.props.history.push("/home");
         } else {
           alert("Please check your credentials and try agian");
