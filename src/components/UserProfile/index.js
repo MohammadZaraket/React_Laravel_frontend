@@ -27,13 +27,22 @@ function UserProfile() {
         fetchData()
       }, [])
          <li key={user.id}>{user.name}</li>*/
+         const config = {
+            headers: { Authorization: `Bearer ${cookie}` }
+        };
+        
+    
+        
+        axios.get( 
+          'http://127.0.0.1:8000/api/user-profile',
+          config
+        ).then(console.log).catch(console.log);
     
       return (
         <div>
             <ul>
              <li>
-                 Test
-                 {cookie}
+               
              </li>
 
             </ul>
