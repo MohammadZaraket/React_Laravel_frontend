@@ -6,15 +6,15 @@ const cookie = new Cookie();
 
 function CookieService() {
 
- function get(key, string) {
+ function get(key) {
     return cookie.get(key);
   }
 
-  function set(key, string, value, string, options, object) {
+  function set(key, value, options) {
     cookie.set(key, value, options);
   }
 
-  function remove(key, string) {
+  function remove(key) {
     cookie.remove(key);
   }
 }

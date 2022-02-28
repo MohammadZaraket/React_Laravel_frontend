@@ -1,11 +1,12 @@
 import React, { useState, useEffect} from 'react';
 import ContactUs from "../../pages/ContactUs";
-import { Navigate } from 'react-router-dom';
+//import { Navigate } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { Grid, TextField, Button, Card, CardContent, Typography } from '@mui/material/';
-import { RouteComponentProps } from "react-router-dom";
-
-//import AuthService from "./../../services/AuthService";
+//import { RouteComponentProps } from "react-router-dom";
+import AuthService from "../../Services/AuthService";
+import axios from "axios";
+import Cookie from "universal-cookie";
 
 
 function SignInForm() {
@@ -14,35 +15,51 @@ function SignInForm() {
     const [password,setPassword] = useState("");
     const [redirect,setRedirect] = useState(false);
  
+    const cookie = new Cookie();
 
     const navigate = useNavigate();
 
-    /*useEffect(() => {
 
-      if (sessionStorage.getItem("user_token") != 'undefined') {
+    function handleLoginSuccess(response) {
+      set("access_token", response.access_token);
+      return true;
+    }
 
-        navigate("/dashboard")
-      }
 
-    },[])*/
+    
+  async function doUserLogin(credentials) {
+    try {
+      const response = await axios.post("http://127.0.0.1:8000/api/login", credentials);
+      return response.data;
+    } catch (error) {
+      console.error("Error", error.response);
+      return false;
+    }
+  }
+
+function set(key, value) {
+  cookie.set(key, value);
+}
 
    async function login(event){
 
     event.preventDefault();
         let item = {email,password};
 
-        const response = await AuthService.doUserLogin(item);
+        const response = await doUserLogin(item);
         if (response) {
-          AuthService.handleLoginSuccess(response);
-          this.props.history.push("/home");
+          handleLoginSuccess(response);
+          navigate("/dashboard");
         } else {
           alert("Please check your credentials and try agian");
         }
+
+        
+        console.log("hi shr")
       }
     
     
   
-        console.log("hi shr")
     
            /* let result = await fetch("http://127.0.0.1:8000/api/login", {
 
