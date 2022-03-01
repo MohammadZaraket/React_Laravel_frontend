@@ -3,7 +3,6 @@ import CookieService from "./CookieService";
 
 const expiresAt = 60 * 24;
 
-
 function AuthService() {
 
   async function doUserLogin(credentials) {

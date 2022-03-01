@@ -1,19 +1,10 @@
 import React, { useState, useEffect} from 'react';
-import ContactUs from "../../pages/ContactUs";
-//import { Navigate } from 'react-router-dom';
-import { renderMatches, useNavigate } from 'react-router-dom';
-//import { RouteComponentProps } from "react-router-dom";
-import AuthService from "../../Services/AuthService";
 import axios from "axios";
 import Cookie from "universal-cookie";
-//import {Tabs, Tab, Col, Row}  from 'react-bootstrap';
-
-import { Grid, TextField, Button, Card, CardContent, Typography } from '@mui/material/';
-
+import { Grid, TextField, Button , Typography } from '@mui/material/';
 
 
 function UserProfile() {
-      const [user, setUsers] = useState([]);
 
       var [name,setName] = useState("");
       var [email,setEmail] = useState("");
@@ -35,12 +26,6 @@ function UserProfile() {
             setName(response.data.name);
             setEmail(response.data.email);
         }
-
-
-     
-        
-    
-    
         
       async function doUserUpdate(credentials) {
         try {
@@ -53,7 +38,6 @@ function UserProfile() {
         }
       }
     
-
         
    async function updateProfile(event){
 
@@ -63,7 +47,6 @@ function UserProfile() {
         if(response){
             alert("User Info Updated Successfully!");
         }
-
       }
 
     
@@ -109,16 +92,6 @@ function UserProfile() {
 
       )
     
-     /* const fetchData = async () => {
-        const response = await fetch("http://127.0.0.1:8000/api/user-profile")
-        const data = await response.json()
-        setUsers(data)
-      }
-    
-      useEffect(() => {
-        fetchData()
-      }, [])
-         <li key={user.id}>{user.name}</li>*/
 
 
 }

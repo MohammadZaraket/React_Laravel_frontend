@@ -13,7 +13,6 @@ import Carousel from 'react-bootstrap/Carousel';
 import Devices from './assets/Images/devices.jpg';
 import Lang from './assets/Images/lang.jpg';
 import Web from './assets/Images/web.png';
-import { Grid, TextField, Button, Card, CardContent, Typography } from '@mui/material/';
 
 
 function App({ children }) {
@@ -21,7 +20,6 @@ function App({ children }) {
         <div className="App">
            
            <Navbar />
-           
             <Routes>
                 <Route path="/" element={<Landing />} />
                 <Route path="ContactUs" element={<ContactUs />} />
@@ -34,9 +32,6 @@ function App({ children }) {
         </div>
     );
 
-
-
-
     function Landing() {
         return (
             <>
@@ -44,8 +39,6 @@ function App({ children }) {
             <h6>What do we love most about this landing page? It's not what it doesn't have, but what it have — a navigation bar! By Clicking the navigation bar, you can check our various pages and even you can SignIn</h6>
 
                 <main>
-                  
-
                   
             <Carousel fade className="carousel">
          <Carousel.Item>
@@ -90,87 +83,13 @@ function App({ children }) {
             </Carousel.Caption>
         </Carousel.Item>
         </Carousel>
-
                 </main>
-
-            </>
-        );
-    }
-/*
-    function About() {
-        return (
-            <>
-                <main>
-                    <h2>Who are we?</h2>
-                    <p>
-                        That feels like an existential question, don't you
-                        think?
-                    </p>
-                </main>
-                <nav>
-                    <Link to="/">Home</Link>
-                </nav>
             </>
         );
     }
 
-}*/
-
-
-
-/*className App extends React.Component {
-
-    constructor(props) {
-
-        return(
-
-            <h1>Hi from APP</h1>
-        ) 
-    
-	
-	}
-}
-export default App;
-
-ERRRRROOORRR: Uncaught TypeError: Cannot add property updater, object is not extensible
-*/
-
-
-	/*constructor(props) {
-		super(props);
-
-		this.state = {
-			items: [],
-			DataisLoaded: false
-		};
-	}
-
-	componentDidMount() {
-		fetch("http://127.0.0.1:8000/api/greeting")
-			.then((res) => res.json())
-			.then((json) => {
-				this.setState({
-					items: json,
-					DataisLoaded: true
-				});
-			})
-	}
-	render() {
-		const { DataisLoaded, items } = this.state;
-		if (!DataisLoaded) return <div>
-			<h1> Pleses wait some time.... </h1> </div> ;
-
-		return (
-		<div classNameName = "App">
-			<h1> Fetch data from an api in react </h1> {
-				<ol>
-					greeting: {items.greeting},
-				</ol>
-				
-			}
-		</div>
-	);
-}*/
+//ERRRRROOORRR: Uncaught TypeError: Cannot add property updater, object is not extensible
+// fetch componentDidMount() and render()
 
 };  
 export default App;

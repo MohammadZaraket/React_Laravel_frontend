@@ -14,7 +14,6 @@ import {NAVBAR_ROUTE} from "../../routes/constants";
 import { useNavigate } from 'react-router-dom';
 
 
-
 const Navbar = () => {
 
     const navigate = useNavigate();
