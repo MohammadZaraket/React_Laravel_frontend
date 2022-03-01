@@ -10,8 +10,8 @@ import Dashboard from "./pages/Dashboard";
 import SignUp from "./pages/SignUp";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Carousel from 'react-bootstrap/Carousel';
-import Devices from './assets/Images/devices.png';
-import Lang from './assets/Images/lang.png';
+import Devices from './assets/Images/devices.jpg';
+import Lang from './assets/Images/lang.jpg';
 import Web from './assets/Images/web.png';
 import { Grid, TextField, Button, Card, CardContent, Typography } from '@mui/material/';
 
@@ -41,12 +41,11 @@ function App({ children }) {
         return (
             <>
              <h1>Welcome to React FrontEnd Project</h1>
-            <p>What do we love most about this landing page? It's not what it doesn't have, but what it have — a navigation bar! By Clicking the navigation bar, you can check our various pages and even you can SignIn</p>
+            <h6>What do we love most about this landing page? It's not what it doesn't have, but what it have — a navigation bar! By Clicking the navigation bar, you can check our various pages and even you can SignIn</h6>
 
                 <main>
                   
-            <Grid container spacing={1} >
-              <Grid item xs={12}>
+
                   
             <Carousel fade className="carousel">
          <Carousel.Item>
@@ -54,6 +53,8 @@ function App({ children }) {
       className="d-block w-100"
       src={Web}
       alt="First slide"
+      height="50%"
+      width="50%"
     />
     <Carousel.Caption>
       <h3>Web Development Is Rising!</h3>
@@ -65,6 +66,8 @@ function App({ children }) {
             className="d-block w-100"
             src={Devices}
             alt="Second slide"
+            height="50%"
+            width="50%"
             />
 
             <Carousel.Caption>
@@ -77,6 +80,8 @@ function App({ children }) {
             className="d-block w-100"
             src={Lang}
             alt="Third slide"
+            height="50%"
+            width="50%"
             />
 
             <Carousel.Caption>
@@ -85,8 +90,7 @@ function App({ children }) {
             </Carousel.Caption>
         </Carousel.Item>
         </Carousel>
-        </Grid>
-        </Grid>
+
                 </main>
 
             </>

@@ -28,7 +28,7 @@
 	}
 }
 
-h1,h3 {
+h1 {
 
 	font-size: 5em;
 	letter-spacing: -2px;
@@ -37,14 +37,14 @@ h1,h3 {
 	color: #0000FF;
    }
 
-p{
+p,h3{
 	padding: 0 25%;
-	color: #0000FF;
+	color: white;
    }
 
 h6{
 
-	padding-top: 2%;
+	padding: 0 25%;
 }
 
 nav{
@@ -57,6 +57,7 @@ nav{
 	height: 40%;
 	width: 40%;
 	margin:auto;
+	padding-bottom: 5%;
 }
 
 
