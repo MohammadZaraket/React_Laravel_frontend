@@ -3,6 +3,7 @@
 	color: #0000FF;
 
 	font-family: "Trebuchet MS", sans-serif;
+	background-color:#D4F1F4;
 }
 .App-header {
 	background-color: #282c34;
@@ -27,20 +28,29 @@
 	}
 }
 
-h1 {
+h1,h3 {
 
 	font-size: 5em;
 	letter-spacing: -2px;
 	text-transform: uppercase;
 	padding-top: 2%;
+	color: #0000FF;
    }
 
 p{
 	padding: 0 25%;
-
+	color: #0000FF;
    }
 
+h6{
 
+	padding-top: 2%;
+}
+
+nav{
+
+	padding-bottom: 2%;
+}
 
 .carousel{
 
