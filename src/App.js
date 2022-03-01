@@ -57,8 +57,8 @@ function App({ children }) {
       width="50%"
     />
     <Carousel.Caption>
-      <h3>Web Development Is Rising!</h3>
-      <p>We Are In 2022</p>
+      <h5>Web Development Is Rising!</h5>
+      <h5>We Are In 2022</h5>
             </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
@@ -71,8 +71,8 @@ function App({ children }) {
             />
 
             <Carousel.Caption>
-            <h3>All Is Connected</h3>
-            <p>Living In a Small World!</p>
+            <h5>All Is Connected</h5>
+            <h5>Living In a Small World!</h5>
             </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
@@ -85,8 +85,8 @@ function App({ children }) {
             />
 
             <Carousel.Caption>
-            <h3>Programming Languages</h3>
-            <p>Trust Me, There Is A Lot!</p>
+            <h5>Programming Languages</h5>
+            <h5>Trust Me, There Is A Lot!</h5>
             </Carousel.Caption>
         </Carousel.Item>
         </Carousel>

@@ -1,5 +1,4 @@
 import React, { useState, useEffect} from 'react';
-import ContactUs from "../../pages/ContactUs";
 import { Navigate } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { Grid, TextField, Button, Card, CardContent, Typography } from '@mui/material/';
@@ -21,11 +20,6 @@ function SignUpForm() {
         let data = {name,email,password,password_confirmation};
         axios
           .post(SignUpURL, data).then((response) => {
-           /* setEmail(response.data);
-            setPassword(response.data);
-            setName(response.data);
-            setConfirmPassword(response.data);*/
-
             navigate('/SignIn')
             console.log("test")
           });
