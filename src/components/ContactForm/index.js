@@ -1,10 +1,27 @@
-import React from 'react';
-
+import React, { useState, useEffect} from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Grid, TextField, Button, Card, CardContent, Typography } from '@mui/material/';
+import axios from "axios";
+
 
 
 function ContactForm() {
 
+
+  const SignUpURL = "http://127.0.0.1:8000/api/store";
+  const [name,setName] = useState("");
+  const [email,setEmail] = useState("");
+  const [subject,setSubject] = useState("");
+  const [message,setMessage] = useState("");
+
+  function contact(event) {
+      event.preventDefault();
+      let data = {name,email,subject,message};
+      axios
+        .post(SignUpURL, data).then((response) => {
+          console.log("test")
+        });
+    }
 
   return (
     <div className="App"> 
@@ -32,7 +49,7 @@ function ContactForm() {
                   <TextField label="Message" multiline rows={4} placeholder="Type your message here" variant="outlined" fullWidth required />
                 </Grid>
                 <Grid item xs={12}>
-                  <Button type="submit" variant="contained" color="primary" fullWidth>Submit</Button>
+                  <Button type="submit" variant="contained" onClick= {contact} color="primary" fullWidth>Submit</Button>
                 </Grid>
 
               </Grid>
