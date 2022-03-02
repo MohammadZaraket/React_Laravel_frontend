@@ -20,6 +20,7 @@ function ContactForm() {
       axios
         .post(SignUpURL, data).then((response) => {
           console.log("test")
+          alert(response.data.message)
         });
     }
 
@@ -37,16 +38,16 @@ function ContactForm() {
             <form>
               <Grid container spacing={1}>
                 <Grid xs={12} item>
-                  <TextField placeholder="Enter Your name" label="Full Name" variant="outlined" fullWidth required />
+                  <TextField placeholder="Enter Your name" label="Full Name" variant="outlined" value={name} onInput={e => setName(e.target.value)} fullWidth required />
                 </Grid>
                 <Grid item xs={12}>
-                  <TextField type="email" placeholder="Enter email" label="Email" variant="outlined" fullWidth required />
+                  <TextField type="email" placeholder="Enter email" label="Email" variant="outlined" value={email} onInput={e => setEmail(e.target.value)} fullWidth required />
                 </Grid>
                 <Grid item xs={12}>
-                  <TextField placeholder="Subject" label="Subject" variant="outlined" fullWidth required />
+                  <TextField placeholder="Subject" label="Subject" variant="outlined" value={subject} onInput={e => setSubject(e.target.value)} fullWidth required />
                 </Grid>
                 <Grid item xs={12}>
-                  <TextField label="Message" multiline rows={4} placeholder="Type your message here" variant="outlined" fullWidth required />
+                  <TextField label="Message" multiline rows={4} placeholder="Type your message here" variant="outlined" value={message} onInput={e => setMessage(e.target.value)} fullWidth required />
                 </Grid>
                 <Grid item xs={12}>
                   <Button type="submit" variant="contained" onClick= {contact} color="primary" fullWidth>Submit</Button>
