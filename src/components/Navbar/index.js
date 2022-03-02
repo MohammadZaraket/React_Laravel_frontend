@@ -80,7 +80,7 @@ const Navbar = () => {
               
             >
               {NAVBAR_ROUTE.map(({name,path}) => (
-                <MenuItem key={name} onClick={handleCloseNavMenu}>
+                <MenuItem key={name} onClick={() => navigate(path)}>
                   <Typography textAlign="center">{name}</Typography>
                 </MenuItem>
               ))}
